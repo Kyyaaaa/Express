@@ -1,0 +1,15 @@
+/* Default for all */
+body {
+
+}
+
+/* For login */
+.login-page {
+    background-image: url('/asset/LoginBackground.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* For register */
+.register-page {
+}

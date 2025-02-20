@@ -8,17 +8,20 @@ const users = []
 app.set('view-engine', 'ejs')
 app.set("views", path.join(__dirname, "./src/views"));
 app.use(express.urlencoded({ extended : false }))
+app.use(express.static(path.join(__dirname, "./src/public")));
+
+// console.log("__dirname:", __dirname);
 
 app.get('/', (req, res) => {
     res.send("Hello QuangBuiCP")
 })
 
 app.get('/login', (req, res) => {
-    res.render('login.ejs')
+    res.render("login.ejs", {title: "Login Page", bodyClass: "login-page"});
 })
 
 app.get('/register', (req, res) => {
-    res.render('register.ejs')
+    res.render("register.ejs", {title: "Register Page", bodyClass: "register-page"});
 })
 
 app.post('/register', async (req, res) => {
